@@ -1,14 +1,313 @@
+/* reset the default browser spacing and make sizing easier to manage */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* overall page styling */
 body {
-  background-color: #f5f0ff;
-  font-family: Arial, sans-serif;
+  background-color: #86937d;
+  font-family: "Inter", sans-serif;
+  color: #f6f4ec;
+  min-height: 100vh;
 }
 
-h1 {
-  color: #620574;
+/* main page layout */
+.page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: stretch;
+}
+
+/* =========================
+   left panel
+   ========================= */
+.left-panel {
+  width: 47%;
+  background-color: #86937d;
+  padding: 60px 40px 50px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   text-align: center;
 }
 
-p {
+/* wrapper around the profile photo */
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+/* circular profile image */
+.profile-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* main name heading */
+.name {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 10px;
+  letter-spacing: -1px;
+}
+
+/* pronouns under the name */
+.pronouns {
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 300;
+  margin-bottom: 34px;
+  opacity: 0.95;
+}
+
+/* short job title under the pronouns */
+.title {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 300;
+  margin-bottom: 20px; /* reduced from 80px so connect section moves higher */
+  opacity: 0.95;
+}
+
+/* connect section on the lower left */
+.connect-section {
+  margin-top: 28px; /* keeps some breathing room, but much higher than before */
+}
+
+/* connect heading text */
+.connect-heading {
+  font-size: 0.95rem;
+  letter-spacing: 4px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* row of social links */
+.social-icons {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* social link styling */
+.social-icons a {
+  color: #e5efb6;
+  text-decoration: none;
+  font-size: 1.6rem;
+  padding: 6px 10px;
+  font-weight: 700;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* hover effect for social links */
+.social-icons a:hover {
+  transform: translateY(-3px);
+  opacity: 0.85;
+}
+
+/* =========================
+   right panel
+   ========================= */
+.right-panel {
+  width: 53%;
+  margin: 30px 0; /* space above and below the panel */
+  min-height: calc(100vh - 60px); /* allows it to grow if needed */
+  overflow: visible; /* prevents cutting off content */
+  background-color: #aab38a;
+  color: #f7f4eb;
+  padding: 48px 52px 32px;
+  border-top-left-radius: 42px;
+  border-bottom-left-radius: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* wrapper for each section on the right side */
+.content-block {
+  margin-bottom: 18px;
+}
+
+/* section headings like ABOUT ME, EDUCATION, SKILLS */
+.section-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+/* about me paragraph */
+.about-text {
+  max-width: 650px;
+  font-size: 1.1rem; 
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+/* divider lines between right panel sections */
+hr {
+  border: none;
+  border-top: 3px solid rgba(46, 52, 37, 0.65);
+  margin: 12px 0 26px;
+}
+
+/* education row layout */
+.timeline-row {
+  display: flex;
+  flex-direction: column; /* stack instead of side-by-side */
+  gap: 6px;
+}
+
+/* year on the left side of education row */
+.year {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+/* education details container */
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.details h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.details p {
+  font-size: 1.05rem;
+  opacity: 0.9;
+}
+
+/* skills section layout */
+.skills-grid {
+  display: flex;
+  justify-content: center; /* centers the whole skills block */
+  align-items: flex-start;
+  gap: 100px; /* spacing between skill columns */
+}
+
+/* reset list styling for skills */
+.skills-grid ul {
+  list-style: none; /* removes default bullets */
+  padding: 0;
+  margin: 0;
+}
+
+.skills-grid li {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.4; /* tighter line box so the bullet sits higher */
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 10px; /* controls spacing between rows instead */
+}
+
+/* custom subtle bullet */
+.skills-grid li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: -1px; /* nudges bullet upward */
+  opacity: 0.6;
+  line-height: 1;
+}
+
+/* resume button styling */
+.resume-button {
+  display: block;
+  width: 100%;
+  margin-top: auto;
+  padding: 10px;
+  background-color: #6f7967;
+  color: #f7f4eb;
   text-align: center;
-  font-size: 18px;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* resume button hover effect */
+.resume-button:hover {
+  background-color: #646860;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   responsive styles
+   ========================= */
+
+/* medium screens */
+@media (max-width: 1200px) {
+  .right-panel {
+    padding: 44px 40px 36px;
+  }
+}
+
+/* tablet and smaller screens */
+@media (max-width: 900px) {
+  .right-panel {
+    width: 100%;
+    border-top-left-radius: 36px;
+    border-bottom-left-radius: 0;
+    padding: 40px 25px 36px;
+    height: auto;
+    margin: 0;
+  }
+
+  .timeline-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .skills-grid {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* smaller phones */
+@media (max-width: 600px) {
+  .section-label {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+  }
+
+  .about-text,
+  .details p,
+  .skills-grid li {
+    font-size: 0.95rem;
+  }
+
+  .details h3,
+  .year {
+    font-size: 1rem;
+  }
+
+  .resume-button {
+    font-size: 0.95rem;
+    padding: 16px;
+  }
 }

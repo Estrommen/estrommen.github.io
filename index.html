@@ -1,13 +1,85 @@
-<!-- rebuild -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emily's Site</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emily Strommen Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- optional google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet"
+  >
 </head>
 <body>
-  <h1>Hi, I'm Emily</h1>
-  <p>This is my GitHub Pages site.</p>
+  <main class="page">
+    <section class="left-panel">
+      <div class="image-wrapper">
+        <img src="images/emilyprofileimg.png" alt="Portrait of Emily Strommen" class="profile-image">
+      </div>
+
+      <h1 class="name">Emily Strommen</h1>
+      <p class="pronouns">(She/Her)</p>
+      <p class="title">Junior Full-Stack Developer</p>
+
+      <div class="connect-section">
+        <h2 class="connect-heading">CONNECT WITH ME</h2>
+
+        <div class="social-icons">
+          <a href="mailto:emilystrommen03@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/emily-strommen-39a991276" aria-label="LinkedIn">LinkedIn</a>
+          <a href="https://csbsju.joinhandshake.com/profiles/yfjtgw" aria-label="Handshake">Handshake</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="right-panel">
+      <div class="content-block">
+        <p class="section-label">ABOUT ME</p>
+        <p class="about-text">
+        I’m a computer science student who enjoys building intuitive, accessible interfaces and turning complex ideas into simple, clean designs. I’m especially interested in creating experiences that are easy to use, visually consistent, and helpful to the people using them.
+        </p>
+      </div>
+
+      <hr>
+
+      <div class="content-block">
+        <p class="section-label">EDUCATION</p>
+        <div class="timeline-row">
+          <div class="year">2026</div>
+          <div class="details">
+            <h3>Bachelor of Arts in Computer Science</h3>
+            <p>College of Saint Benedict and Saint John’s University</p>
+            <p>Saint Joseph, MN</p>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="content-block">
+        <p class="section-label">SKILLS</p>
+        <div class="skills-grid">
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+          </ul>
+          <ul>
+            <li>React</li>
+            <li>JavaScript</li>
+          </ul>
+          <ul>
+            <li>SQL</li>
+            <li>WCAG / A11Y</li>
+          </ul>
+        </div>
+      </div>
+
+      <a href="EmilyStrommenResumeUpdated3.29.pdf" class="resume-button">RESUME</a>
+    </section>
+  </main>
 </body>
 </html>
