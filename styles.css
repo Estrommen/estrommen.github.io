@@ -266,48 +266,115 @@ hr {
   }
 }
 
-/* tablet and smaller screens */
+/* tablet and down */
 @media (max-width: 900px) {
+  .page {
+    flex-direction: column; /* puts left panel on top, right panel underneath */
+    height: auto;
+  }
+
+  .left-panel,
   .right-panel {
     width: 100%;
+  }
+
+  .left-panel {
+    padding: 50px 24px 30px;
+  }
+
+  .right-panel {
+    margin: 0;
+    min-height: auto;
+    height: auto;
+    overflow: visible;
     border-top-left-radius: 36px;
     border-bottom-left-radius: 0;
-    padding: 40px 25px 36px;
-    height: auto;
-    margin: 0;
+    border-top-right-radius: 36px;
+    padding: 36px 24px 32px;
   }
 
   .timeline-row {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
   }
 
   .skills-grid {
-    flex-direction: column;
-    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 32px;
+  }
+
+  .resume-button {
+    margin-top: 24px;
   }
 }
 
 /* smaller phones */
 @media (max-width: 600px) {
-  .section-label {
-    font-size: 0.9rem;
-    letter-spacing: 3px;
+  .page {
+    height: auto;
   }
 
-  .about-text,
+  .left-panel {
+    padding: 36px 20px 24px;
+  }
+
+  .right-panel {
+    padding: 28px 20px 28px;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+  }
+
+  .profile-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .name {
+    font-size: 2.1rem;
+    line-height: 1.1;
+  }
+
+  .pronouns {
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+
+  .title {
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+  }
+
+  .social-icons {
+    gap: 20px;
+  }
+
+  .social-icons a {
+    font-size: 1.2rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .details h3 {
+    font-size: 1.05rem;
+  }
+
   .details p,
+  .year,
   .skills-grid li {
     font-size: 0.95rem;
   }
 
-  .details h3,
-  .year {
-    font-size: 1rem;
+  .skills-grid {
+    flex-direction: column;
+    gap: 6px;
   }
 
   .resume-button {
     font-size: 0.95rem;
-    padding: 16px;
+    padding: 14px;
   }
 }
